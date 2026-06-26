@@ -32,12 +32,12 @@ export async function getTeamById(id) {
   return team;
 }
 
-// get team with all its mutants
 export async function getTeamWithMutants(id) {
   const sql = `
   SELECT teams.*, json_agg(mutants) AS mutants
   FROM teams
-  LEFT JOIN mutants ON mutants.team_id = teams.id
+  LEFT JOIN teams_mutants ON teams_mutants.team_id = teams.id
+  LEFT JOIN mutants ON mutants.id = teams_mutants.mutant_id
   WHERE teams.id = $1
   GROUP BY teams.id
   `;

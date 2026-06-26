@@ -21,13 +21,11 @@ export async function getMutants() {
   return mutants;
 }
 
-// get mutant by id with their team
 export async function getMutantById(id) {
   const sql = `
-  SELECT mutants.*, teams.name AS team_name
+  SELECT *
   FROM mutants
-  JOIN teams ON mutants.team_id = teams.id
-  WHERE mutants.id = $1
+  WHERE id = $1
   `;
   const { rows: [mutant] } = await db.query(sql, [id]);
   return mutant;
