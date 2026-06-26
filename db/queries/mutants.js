@@ -4,7 +4,7 @@ import db from "#db/client";
 export async function createMutant(name, alias, status, powerDescription, biography,  imageUrl) {
   const sql = `
   INSERT INTO mutants (name, alias, status, power_description, biography, image_url)
-  VALUES ($1, $2, $3, $4, $5, $6, $7)
+  VALUES ($1, $2, $3, $4, $5, $6)
   RETURNING *
   `;
   const { rows: [mutant] } = await db.query(sql, [name, alias, status, powerDescription, biography, imageUrl]);
