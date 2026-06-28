@@ -16,21 +16,21 @@ async function seed() {
     "X-Men",
     "Xavier's School for Gifted Youngsters, Westchester, NY",
     "A team of mutants fighting for peaceful coexistence between humans and mutants, led by Professor X.",
-    "/images/xmen.jpg"
+    "/images/xmen.png"
   );
 
   const brotherhood = await createTeam(
     "Brotherhood of Mutants",
     "Various locations, global",
     "Formed after the Cuban Missile Crisis, Magneto leads this group believing mutants should rule over humans.",
-    "/images/brotherhood.jpg"
+    "/images/brotherhood.png"
   );
 
   const hellfire = await createTeam(
     "Hellfire Club",
     "New York City, NY",
     "A secret society of powerful mutants and humans seeking world domination through political and economic means.",
-    "/images/hellfire.jpg"
+    "/images/hellfire.png"
   );
 
   const xforce = await createTeam(
