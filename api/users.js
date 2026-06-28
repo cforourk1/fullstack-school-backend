@@ -25,3 +25,9 @@ router.post("/login", requireBody(["username", "password"]), async (req, res) =>
   const token = createToken({ id: user.id });
   res.send(token);
 });
+
+
+// get the currently logged in user - requires token
+router.get("/me", requireUser, async (req, res) => {
+  res.send(req.user);
+});
